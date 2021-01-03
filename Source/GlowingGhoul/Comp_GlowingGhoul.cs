@@ -27,10 +27,18 @@ namespace GlowingGhoul
             Map map = parent.Map;
             if (map == null)
             {
+                if (lastMap != null)
+                {
+                    lastMap.glowGrid.DeRegisterGlower(this);
+                }
                 return;
             }
             IntVec3 position = parent.Position;
-            if ((vec3 != IntVec3.Invalid && (vec3 == IntVec3.Invalid || vec3 == position)) || Find.TickManager.TicksGame < nextUpdateTick)
+            if (vec3 != IntVec3.Invalid && (vec3 == IntVec3.Invalid || vec3 == position))
+            {
+                return;
+            }
+            if (Find.TickManager.TicksGame < nextUpdateTick)
             {
                 return;
             }
@@ -39,6 +47,7 @@ namespace GlowingGhoul
             map.glowGrid.DeRegisterGlower(this);
             map.mapDrawer.MapMeshDirty(parent.Position, MapMeshFlag.Things);
             map.glowGrid.RegisterGlower(this);
+            lastMap = map;
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -58,10 +67,14 @@ namespace GlowingGhoul
 
         // Token: 0x04000002 RID: 2
         public int nextUpdateTick;
+
+        private Map lastMap;
+
         public override void PostExposeData()
         {
             base.PostExposeData();
             Scribe_Values.Look(ref nextUpdateTick, "nextUpdateTick", 0);
+            Scribe_Values.Look(ref lastMap, "lastMap", null);
         }
     }
 }
