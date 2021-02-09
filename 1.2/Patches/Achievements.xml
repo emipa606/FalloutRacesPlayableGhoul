@@ -111,6 +111,7 @@
               <defName>FRPG_GhoulJoinsTheColony</defName>
               <label>A Ghoul Joins</label>
               <cost>100</cost>
+              <tab>Mlie_Continued</tab>
               <incident>FRPG_GhoulJoinsTheColony</incident>
             </AchievementsExpanded.Reward_MapIncident>
           </value>
@@ -122,6 +123,7 @@
               <defName>FRPG_GlowingOneJoinsTheColony</defName>
               <label>A Glowing One Joins</label>
               <cost>200</cost>
+              <tab>Mlie_Continued</tab>
               <incident>FRPG_GlowingOneJoinsTheColony</incident>
             </AchievementsExpanded.Reward_MapIncident>
           </value>
