@@ -111,6 +111,7 @@
         <cannotReceiveThoughts>
           <li>ObservedLayingCorpse</li>
           <li>ObservedLayingRottingCorpse</li>
+          <li>Ugly</li>
         </cannotReceiveThoughts>
       </thoughtSettings>
     </alienRace>
