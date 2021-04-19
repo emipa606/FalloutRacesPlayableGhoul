@@ -163,6 +163,7 @@
       <MiningSpeed>1</MiningSpeed>
       <!--MeleeDodgeChance>0</MeleeDodgeChance-->
     </statBases>
+    <comps Inherit="False" />
     <tools Inherit="False">
       <li>
         <label>left fist</label>

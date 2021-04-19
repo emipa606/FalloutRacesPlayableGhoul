@@ -2,46 +2,41 @@
 
 namespace GlowingGhoul
 {
-
     public class Comp_GlowingGhoul : CompGlower
     {
+        public const int updatePeriodInTicks = 50;
+
+        private readonly IntVec3 vec3 = IntVec3.Invalid;
+
+        private Map lastMap;
+
+        // Token: 0x04000002 RID: 2
+        private int nextUpdateTick;
 
         public new CompProperties_GlowingGhoul Props => props as CompProperties_GlowingGhoul;
-
-        public override void Initialize(CompProperties props)
-        {
-            base.Initialize(props);
-        }
-
-        public override void PostPostMake()
-        {
-            base.PostPostMake();
-        }
-
-
-        public IntVec3 vec3 = IntVec3.Invalid;
 
         public override void CompTick()
         {
             base.CompTick();
-            Map map = parent.Map;
+            var map = parent.Map;
             if (map == null)
             {
-                if (lastMap != null)
-                {
-                    lastMap.glowGrid.DeRegisterGlower(this);
-                }
+                lastMap?.glowGrid.DeRegisterGlower(this);
+
                 return;
             }
-            IntVec3 position = parent.Position;
+
+            var position = parent.Position;
             if (vec3 != IntVec3.Invalid && (vec3 == IntVec3.Invalid || vec3 == position))
             {
                 return;
             }
+
             if (Find.TickManager.TicksGame < nextUpdateTick)
             {
                 return;
             }
+
             nextUpdateTick = Find.TickManager.TicksGame + 50;
             map.mapDrawer.MapMeshDirty(parent.Position, MapMeshFlag.Things);
             map.glowGrid.DeRegisterGlower(this);
@@ -50,32 +45,25 @@ namespace GlowingGhoul
             lastMap = map;
         }
 
-        public override void PostSpawnSetup(bool respawningAfterLoad)
-        {
-            nextUpdateTick = Find.TickManager.TicksGame;
-            //if (this.parent.Map != null)
-            //{
-            //    base.PostSpawnSetup(respawningAfterLoad);
-            //    if (!respawningAfterLoad)
-            //    {
-            //        this.nextUpdateTick = Find.TickManager.TicksGame + Rand.Range(0, 100);
-            //    }
-            //}
-        }
-
-        public const int updatePeriodInTicks = 50;
-
-        // Token: 0x04000002 RID: 2
-        public int nextUpdateTick;
-
-        private Map lastMap;
-
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref nextUpdateTick, "nextUpdateTick", 0);
-            Scribe_Values.Look(ref lastMap, "lastMap", null);
+            Scribe_Values.Look(ref nextUpdateTick, "nextUpdateTick");
+            Scribe_References.Look(ref lastMap, "lastMap");
+        }
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            nextUpdateTick = Find.TickManager.TicksGame;
+
+            // if (this.parent.Map != null)
+            // {
+            // base.PostSpawnSetup(respawningAfterLoad);
+            // if (!respawningAfterLoad)
+            // {
+            // this.nextUpdateTick = Find.TickManager.TicksGame + Rand.Range(0, 100);
+            // }
+            // }
         }
     }
 }
-

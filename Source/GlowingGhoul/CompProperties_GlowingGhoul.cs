@@ -8,7 +8,5 @@ namespace GlowingGhoul
         {
             compClass = typeof(Comp_GlowingGhoul);
         }
-
     }
 }
-
