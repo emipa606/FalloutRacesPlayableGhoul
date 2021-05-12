@@ -1,5 +1,8 @@
 # Changelog for FalloutRacesPlayableGhoul
 
+1.0.7.0 - Fixed compatibility with run and gun, simple sidearms
+
+
 1.0.6.0 - Races no longer inherits Comps, better compatibility with FacialAnimations-mod
 
 
