@@ -8,6 +8,7 @@
     <li>1.0</li>
     <li>1.1</li>
     <li>1.2</li>
+    <li>1.3</li>
   </supportedVersions>
   <modDependencies>
     <li>
@@ -52,7 +53,7 @@ Ghouls are immune to age related issues and recover from diseases 150% as fast a
 They generate very little body heat and are susceptible to the cold.
 They are all staggeringly ugly (or in 1.1 start with -2 Beauty) and that is why most people dislike them.
 They are naturally found in the Outlander Factions at approximately 1/4 the time of normal humans.
-They also don't eat as much, needing only 67% the normal amount of food.
+They also don&apos;t eat as much, needing only 67% the normal amount of food.
 They are immune to the toxic fallout.
 They generate less leather as their skin is already peeling off.
 
