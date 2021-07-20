@@ -99,9 +99,14 @@
           <head>Ghoul/Head/</head>
         </li>
       </graphicPaths>
-      <hairSettings>
-        <hasHair>true</hasHair>
-      </hairSettings>
+      <styleSettings>
+        <li>
+          <key>BeardDef</key>
+          <value>
+            <hasStyle>false</hasStyle>
+          </value>
+        </li>
+      </styleSettings>
       <raceRestriction>
         <onlyUseRaceRestrictedApparel>false</onlyUseRaceRestrictedApparel>
         <onlyUseRaceRestrictedWeapons>false</onlyUseRaceRestrictedWeapons>
