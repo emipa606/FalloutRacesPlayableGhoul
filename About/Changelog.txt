@@ -1,5 +1,8 @@
 # Changelog for FalloutRacesPlayableGhoul
 
+1.4.1 - Mod updated for 1.4 and passed autotests
+
+
 1.0.9.0 - Republish since the HAR framework changed how hair and beards are coded
 
 

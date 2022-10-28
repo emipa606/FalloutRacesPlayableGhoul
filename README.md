@@ -1,26 +1,17 @@
 # FalloutRacesPlayableGhoul
 
-![Image](https://i.imgur.com/WAEzk68.png)
+![Image](https://i.imgur.com/buuPQel.png)
 
 Update of RamRods mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1908250492
 
-![Image](https://i.imgur.com/7Gzt3Rg.png)
+![Image](https://i.imgur.com/pufA0kM.png)
 
-
-[table]
-    [tr]
-        [td]https://invite.gg/Mlie]![Image](https://i.imgur.com/zdzzBrc.png)
-[/td]
-        [td]https://github.com/emipa606/FalloutRacesPlayableGhoul]![Image](https://i.imgur.com/kTkpTOE.png)
-[/td]
-    [/tr]
-[/table]
 	
 https://steamcommunity.com/sharedfiles/filedetails/?id=2288125657]![Image](https://i.imgur.com/kNldlMg.png)
 
 
-![Image](https://i.imgur.com/NOW7jU1.png)
+![Image](https://i.imgur.com/Z4GOv8H.png)
 
 This is a fallout inspired mod, Playable Ghouls. It requires the Humanoid AlienRaces 2.0 mod.
 
@@ -38,7 +29,7 @@ Ghouls are immune to age related issues and recover from diseases 150% as fast a
 They generate very little body heat and are susceptible to the cold.
 They are all staggeringly ugly (or in 1.1 start with -2 Beauty) and that is why most people dislike them.
 They are naturally found in the Outlander Factions at approximately 1/4 the time of normal humans.
-They also don&apos;t eat as much, needing only 67% the normal amount of food.
+They also don't eat as much, needing only 67% the normal amount of food.
 They are immune to the toxic fallout.
 They generate less leather as their skin is already peeling off.
 
@@ -65,7 +56,7 @@ None. Fixed previous issue with glowing one.
 Change Log.
 Made HD ghouls courtousy of Goob.
 
-![Image](https://i.imgur.com/Rs6T6cr.png)
+![Image](https://i.imgur.com/PwoNOj4.png)
 
 
 

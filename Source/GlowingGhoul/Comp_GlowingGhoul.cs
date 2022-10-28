@@ -1,69 +1,67 @@
-﻿using Verse;
+using Verse;
 
-namespace GlowingGhoul
+namespace GlowingGhoul;
+
+public class Comp_GlowingGhoul : CompGlower
 {
-    public class Comp_GlowingGhoul : CompGlower
+    public const int updatePeriodInTicks = 50;
+
+    private readonly IntVec3 vec3 = IntVec3.Invalid;
+
+    private Map lastMap;
+
+    private int nextUpdateTick;
+
+    public new CompProperties_GlowingGhoul Props => props as CompProperties_GlowingGhoul;
+
+    public override void CompTick()
     {
-        public const int updatePeriodInTicks = 50;
-
-        private readonly IntVec3 vec3 = IntVec3.Invalid;
-
-        private Map lastMap;
-
-        // Token: 0x04000002 RID: 2
-        private int nextUpdateTick;
-
-        public new CompProperties_GlowingGhoul Props => props as CompProperties_GlowingGhoul;
-
-        public override void CompTick()
+        base.CompTick();
+        var map = parent.Map;
+        if (map == null)
         {
-            base.CompTick();
-            var map = parent.Map;
-            if (map == null)
-            {
-                lastMap?.glowGrid.DeRegisterGlower(this);
+            lastMap?.glowGrid.DeRegisterGlower(this);
 
-                return;
-            }
-
-            var position = parent.Position;
-            if (vec3 != IntVec3.Invalid && (vec3 == IntVec3.Invalid || vec3 == position))
-            {
-                return;
-            }
-
-            if (Find.TickManager.TicksGame < nextUpdateTick)
-            {
-                return;
-            }
-
-            nextUpdateTick = Find.TickManager.TicksGame + 50;
-            map.mapDrawer.MapMeshDirty(parent.Position, MapMeshFlag.Things);
-            map.glowGrid.DeRegisterGlower(this);
-            map.mapDrawer.MapMeshDirty(parent.Position, MapMeshFlag.Things);
-            map.glowGrid.RegisterGlower(this);
-            lastMap = map;
+            return;
         }
 
-        public override void PostExposeData()
+        var position = parent.Position;
+        if (vec3 != IntVec3.Invalid && (vec3 == IntVec3.Invalid || vec3 == position))
         {
-            base.PostExposeData();
-            Scribe_Values.Look(ref nextUpdateTick, "nextUpdateTick");
-            Scribe_References.Look(ref lastMap, "lastMap");
+            return;
         }
 
-        public override void PostSpawnSetup(bool respawningAfterLoad)
+        if (Find.TickManager.TicksGame < nextUpdateTick)
         {
-            nextUpdateTick = Find.TickManager.TicksGame;
-
-            // if (this.parent.Map != null)
-            // {
-            // base.PostSpawnSetup(respawningAfterLoad);
-            // if (!respawningAfterLoad)
-            // {
-            // this.nextUpdateTick = Find.TickManager.TicksGame + Rand.Range(0, 100);
-            // }
-            // }
+            return;
         }
+
+        nextUpdateTick = Find.TickManager.TicksGame + 50;
+        map.mapDrawer.MapMeshDirty(parent.Position, MapMeshFlag.Things);
+        map.glowGrid.DeRegisterGlower(this);
+        map.mapDrawer.MapMeshDirty(parent.Position, MapMeshFlag.Things);
+        map.glowGrid.RegisterGlower(this);
+        lastMap = map;
+    }
+
+    public override void PostExposeData()
+    {
+        base.PostExposeData();
+        Scribe_Values.Look(ref nextUpdateTick, "nextUpdateTick");
+        Scribe_References.Look(ref lastMap, "lastMap");
+    }
+
+    public override void PostSpawnSetup(bool respawningAfterLoad)
+    {
+        nextUpdateTick = Find.TickManager.TicksGame;
+
+        // if (this.parent.Map != null)
+        // {
+        // base.PostSpawnSetup(respawningAfterLoad);
+        // if (!respawningAfterLoad)
+        // {
+        // this.nextUpdateTick = Find.TickManager.TicksGame + Rand.Range(0, 100);
+        // }
+        // }
     }
 }

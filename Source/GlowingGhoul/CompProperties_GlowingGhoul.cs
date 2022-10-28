@@ -1,12 +1,11 @@
 ﻿using RimWorld;
 
-namespace GlowingGhoul
+namespace GlowingGhoul;
+
+public class CompProperties_GlowingGhoul : CompProperties_Glower
 {
-    public class CompProperties_GlowingGhoul : CompProperties_Glower
+    public CompProperties_GlowingGhoul()
     {
-        public CompProperties_GlowingGhoul()
-        {
-            compClass = typeof(Comp_GlowingGhoul);
-        }
+        compClass = typeof(Comp_GlowingGhoul);
     }
 }
