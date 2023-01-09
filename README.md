@@ -70,3 +70,4 @@ Made HD ghouls courtousy of Goob.
 
 
 
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2343993193]Last updated 2023-01-09
