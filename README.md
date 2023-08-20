@@ -68,6 +68,4 @@ Made HD ghouls courtousy of Goob.
 -  If you have the solution for a problem, please post it to the GitHub repository.
 
 
-
-
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2343993193]Last updated 2023-01-09
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2343993193]Last updated 2023-08-20

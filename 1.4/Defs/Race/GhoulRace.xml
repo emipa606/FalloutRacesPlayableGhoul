@@ -149,7 +149,8 @@
       </thoughtSettings>
     </alienRace>
     <statBases Inherit="False">
-      <ToxicResistance>0</ToxicResistance>
+      <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+      <ToxicResistance>1</ToxicResistance>
       <PawnBeauty>-2</PawnBeauty>
       <MarketValue>1000</MarketValue>
       <MoveSpeed>4.2</MoveSpeed>
